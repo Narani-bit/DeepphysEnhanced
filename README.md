@@ -12,11 +12,7 @@ This repository contains the implementation and testing pipeline for the **DeepP
 ### 2. `DeepPhysEnhanced.py`
 
 * Contains the full **Python implementation** of the DeepPhysEnhanced model.
-* Enhances the original DeepPhys with a three-branch architecture integrating signals from:
-
-  * DeepPhys CNN-based branch
-  * POS-based branch
-  * GREEN channel-based branch
+* Enhances the original DeepPhys with a three-branch architecture.
 * Incorporates an attention mechanism to fuse information from all three sources.
 
 ### 3. `videos.zip`
@@ -50,3 +46,14 @@ This repository contains the implementation and testing pipeline for the **DeepP
 | **Motion Robustness**      | Robust under motion (e.g., face\_move: 75 BPM, stable)      | Weak under motion (face\_move: 121.3 BPM)                               | Very sensitive to motion (cam\_move: 46.8 vs actual \~73 BPM) | Very robust due to integration of 3 sources with attention mechanism                |
 | **Complexity & Time**      | Moderate (CNN + attention network)                          | Reasonable complexity                                                   | Very lightweight                                              | Higher complexity (3 branches), still reasonable runtime                            |
 | **Ease of Implementation** | Medium (deep network with attention and 2 branches)         | Medium                                                                  | Very easy (single channel only)                               | More complex: requires synchronized inputs from 3 sources                           |
+
+## 📜 Citation
+
+```bibtex
+@article{liu2022rppg,
+  title={rPPG-Toolbox: Deep Remote PPG Toolbox},
+  author={Liu, Xin and Narayanswamy, Girish and Paruchuri, Akshay and Zhang, Xiaoyu and Tang, Jiankai and Zhang, Yuzhe and Wang, Yuntao and Sengupta, Soumyadip and Patel, Shwetak and McDuff, Daniel},
+  journal={arXiv preprint arXiv:2210.00716},
+  year={2022}
+}
+```
