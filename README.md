@@ -6,14 +6,29 @@ This repository contains the implementation and testing pipeline for the **DeepP
 
 ### 1. `DeepPhysEnhanced.ipynb`
 
-* A Google Colab notebook that serves as the  processing **pipeline** for training.
-* Integrates video loading, preprocessing, model inference, and result visualization.
+A Google Colab notebook that performs the **full processing workflow** for DeepPhysEnhanced, including:
+
+* Installing dependencies and uploading input files (videos & model script)
+* Extracting and preprocessing facial regions using MediaPipe
+* Generating training inputs: raw frames, temporal differences, and POS/GREEN features
+* Training the DeepPhysEnhanced model using PyTorch
+* Performing inference and estimating heart rate (BPM) via FFT from predicted signals
 
 ### 2. `DeepPhysEnhanced.py`
 
-* Contains the full **Python implementation** of the DeepPhysEnhanced model.
-* Enhances the original DeepPhys with a three-branch architecture.
-* Incorporates an attention mechanism to fuse information from all three sources.
+Contains the full PyTorch implementation of the **DeepPhysEnhanced** model.
+
+This model improves upon DeepPhys by using a **three-branch architecture** to process and fuse:
+
+* Temporal motion differences
+* Appearance (raw frames with attention masks)
+* POS + GREEN channel features
+
+Key features:
+
+* **Attention mechanisms** applied at two stages in the appearance stream
+* **Fusion of all branches** before final heart rate estimation
+* Designed for robust rPPG prediction even under motion and illumination variations
 
 ### 3. `videos.zip`
 
