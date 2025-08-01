@@ -6,7 +6,7 @@ This repository contains the implementation and testing pipeline for the **DeepP
 
 ### 1. `DeepPhysEnhanced.ipynb`
 
-* A Google Colab notebook that serves as the full processing **pipeline** for training, testing, and evaluating the DeepPhysEnhanced model.
+* A Google Colab notebook that serves as the  processing **pipeline** for training.
 * Integrates video loading, preprocessing, model inference, and result visualization.
 
 ### 2. `DeepPhysEnhanced.py`
