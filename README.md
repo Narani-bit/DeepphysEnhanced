@@ -12,7 +12,7 @@ This repository contains the implementation and testing pipeline for the **DeepP
 ### 2. `DeepPhysEnhanced.py`
 
 * Contains the full **Python implementation** of the DeepPhysEnhanced model.
-* Enhances the original DeepPhys with a three-branch architecture integrating signals from POS+GREEN channel-based branch
+* Enhances the original DeepPhys with a three-branch architecture
 * Incorporates an attention mechanism to fuse information from all three sources.
 
 ### 3. `videos.zip`
