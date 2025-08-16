@@ -54,7 +54,7 @@ Key features:
 
 ### 5. UBFC‑RPPG (external download)
 
-The **UBFC‑RPPG** dataset is **not included** in this repository. Please obtain it from the official page:
+The **UBFC‑RPPG** dataset is **not included** in this repository. We are going to use DATASET_1. Please obtain it from the official page:
 
 * [https://sites.google.com/view/ybenezeth/ubfcrppg](https://sites.google.com/view/ybenezeth/ubfcrppg)
 
