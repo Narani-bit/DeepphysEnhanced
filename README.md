@@ -106,77 +106,71 @@ Aggregated evaluation metrics of the models for each video in the dataset.
 | **Complexity & Time**      | Moderate (CNN + attention network)                          | Reasonable complexity                                                   | Very lightweight                                              | Higher complexity (3 branches), still reasonable runtime                            |
 | **Ease of Implementation** | Medium (deep network with attention and 2 branches)         | Medium                                                                  | Very easy (single channel only)                               | More complex: requires synchronized inputs from 3 sources                           |
 
-## B- Metric Evaluation
+# B-Comparative Performance Analysis of Five Methods
 
-### Per‑Evaluation Interpretation
+Each evaluation compares five pulse‑measurement methods—**POS**, **GREEN**, **DeepPhys**, **DeepPhysEnhanced**, and **DeepPhysEnhancedReLu**—across four metrics: mean absolute error (MAE), root mean square error (RMSE), Pearson correlation with the reference signal, and signal‑to‑noise ratio (SNR, in dB). Below, we restate the key observations for each evaluation, highlighting the best performance per metric and the results achieved by **DeepPhysEnhanced** (the enhanced deep‑learning method) to indicate its rank.
 
-#### Evaluation 5
+## Evaluation 5
 
-In this evaluation, the best scores are achieved by **GREEN** for MAE, **GREEN** for RMSE, **DeepPhysEnhancedReLu** for Pearson correlation, and **GREEN** for SNR. **DeepPhysEnhanced** reports MAE 21.79 (rank 3/5), RMSE 26.26 (rank 2/5), Pearson 0.211 (rank 2/5), and SNR 9.39 dB (rank 2/5).
+**GREEN** delivers the best performance for MAE, RMSE, and SNR, while **DeepPhysEnhancedReLu** achieves the highest Pearson correlation. In this context, **DeepPhysEnhanced** reports MAE 21.79 (3rd out of 5), RMSE 26.26 (2nd), Pearson correlation 0.211 (2nd), and SNR 9.39 dB (2nd).
 
-#### Evaluation 6
+## Evaluation 6
 
-In this evaluation, the best scores are achieved by **POS** for MAE, **POS** for RMSE, **DeepPhysEnhancedReLu** for Pearson correlation, and **POS** for SNR. **DeepPhysEnhanced** reports MAE 21.60 (rank 3/5), RMSE 26.45 (rank 3/5), Pearson −0.061 (rank 5/5), and SNR 9.92 dB (rank 3/5).
+**POS** provides the lowest errors (best MAE and RMSE) and the best SNR, while **DeepPhysEnhancedReLu** attains the strongest Pearson correlation for this sequence. **DeepPhysEnhanced** obtains MAE 21.60 (3rd), RMSE 26.45 (3rd), but its Pearson correlation is only −0.061 (last place, 5th) and its SNR is 9.92 dB (3rd).
 
-#### Evaluation 7
+## Evaluation 7
 
-In this evaluation, the best scores are achieved by **DeepPhysEnhanced** for MAE, **DeepPhysEnhanced** for RMSE, **DeepPhysEnhanced** for Pearson correlation, and **DeepPhysEnhanced** for SNR. **DeepPhysEnhanced** reaches MAE 24.18 (rank 1/5), RMSE 31.04 (rank 1/5), Pearson 0.143 (rank 1/5), and SNR 9.69 dB (rank 1/5).
+**DeepPhysEnhanced** clearly dominates all indicators for this sequence: it achieves the lowest MAE and RMSE, the highest correlation, and the best SNR. Specifically, **DeepPhysEnhanced** reaches MAE 24.18 (1st out of 5), RMSE 31.04 (1st), Pearson correlation 0.143 (1st), and SNR 9.69 dB (1st).
 
-#### Evaluation 8
+## Evaluation 8
 
-In this evaluation, the best scores are achieved by **GREEN** for MAE, **GREEN** for RMSE, **POS** for Pearson correlation, and **GREEN** for SNR. **DeepPhysEnhanced** obtains MAE 13.54 (rank 3/5), RMSE 16.87 (rank 3/5), Pearson 0.140 (rank 4/5), and SNR 12.14 dB (rank 3/5).
+**GREEN** presents the best error values (lowest MAE and RMSE) as well as the best SNR, while **POS** achieves the highest Pearson correlation. Under these conditions, **DeepPhysEnhanced** attains MAE 13.54 (3rd), RMSE 16.87 (3rd), Pearson correlation 0.140 (4th), and SNR 12.14 dB (3rd).
 
-#### Evaluation 10
+## Evaluation 10
 
-In this evaluation, the best scores are achieved by **GREEN** for MAE, **GREEN** for RMSE, **DeepPhysEnhanced** for Pearson correlation, and **GREEN** for SNR. **DeepPhysEnhanced** records MAE 13.23 (rank 2/5), RMSE 20.41 (rank 2/5), Pearson 0.238 (rank 1/5), and SNR 11.00 dB (rank 2/5).
+**GREEN** wins on MAE, RMSE, and SNR, while **DeepPhysEnhanced** secures the best Pearson correlation on this sequence. **DeepPhysEnhanced** records MAE 13.23 (2nd), RMSE 20.41 (2nd), Pearson correlation 0.238 (1st), and SNR 11.00 dB (2nd).
 
-#### Evaluation 11
+## Evaluation 11
 
-In this evaluation, the best scores are achieved by **POS** for MAE, **POS** for RMSE, **POS** for Pearson correlation, and **POS** for SNR. **DeepPhysEnhanced** reports MAE 21.34 (rank 3/5), RMSE 27.65 (rank 3/5), Pearson 0.213 (rank 2/5), and SNR 8.98 dB (rank 3/5).
+**POS** outperforms the others across all metrics in this evaluation (best MAE, RMSE, correlation, and SNR). **DeepPhysEnhanced** achieves MAE 21.34 (3rd), RMSE 27.65 (3rd), Pearson correlation 0.213 (2nd), and SNR 8.98 dB (3rd).
 
-#### Evaluation 12
+## Evaluation 12
 
-In this evaluation, the best scores are achieved by **GREEN** for MAE, **GREEN** for RMSE, **GREEN** for Pearson correlation, and **GREEN** for SNR. **DeepPhysEnhanced** reports MAE 31.88 (rank 3/5), RMSE 35.84 (rank 3/5), Pearson 0.084 (rank 2/5), and SNR 8.43 dB (rank 3/5).
+**GREEN** delivers the best performance on every metric for this sequence (lowest MAE and RMSE, highest correlation, and best SNR). **DeepPhysEnhanced** reports MAE 31.88 (3rd), RMSE 35.84 (3rd), Pearson correlation 0.084 (2nd), and SNR 8.43 dB (3rd).
 
-#### Evaluation 13
+## Evaluation 13
 
-In this evaluation, the best scores are achieved by **DeepPhys** for MAE, **DeepPhys** for RMSE, **DeepPhys** for Pearson correlation, and **DeepPhys** for SNR. **DeepPhysEnhanced** shows MAE 44.03 (rank 3/5), RMSE 52.69 (rank 3/5), Pearson −0.209 (rank 5/5), and SNR 6.76 dB (rank 3/5).
+This sequence is an atypical case where the original deep‑learning method **DeepPhys** has the advantage on all metrics, obtaining the lowest MAE/RMSE, the highest correlation, and the best SNR. In comparison, **DeepPhysEnhanced** records MAE 44.03 (3rd), RMSE 52.69 (3rd), Pearson correlation −0.209 (very low, 5th), and SNR 6.76 dB (3rd).
 
-### Overall Interpretation
+## Overall Synthesis of the Evaluations
 
-Overall trends are clear: **GREEN** leads both accuracy and stability, with 4 wins in MAE, 4 in RMSE, and 4 in SNR across the 8 evaluations, while **POS** is a robust alternative with 2 wins in MAE/RMSE/SNR. **DeepPhys** is generally behind except for a singular case where it tops all four metrics. **DeepPhysEnhanced** most often sits in the upper‑middle of the rankings and secures two first places for Pearson correlation, confirming its potential for temporal tracking.
+Across all eight evaluations, two methods stand out for their overall performance. **GREEN** emerges as the most accurate and stable method, winning the largest number of first places in error (4 wins in MAE and 4 in RMSE) as well as in SNR (4 wins). **POS** appears as a robust alternative, with 2 wins in MAE/RMSE and 2 in SNR. The raw deep‑learning approaches—particularly **DeepPhys**—lag overall: aside from Evaluation 13, where **DeepPhys** exceptionally surpasses the others on all four metrics, these learned methods do not match the reliability of the classical approaches on most tested sequences.
 
-These findings align with aggregated means: **GREEN** yields the lowest average errors (MAE 19.56, RMSE 25.31) and the best average SNR (11.48 dB), with **POS** close behind. **DeepPhysEnhanced** shows averages near **POS** for MAE/RMSE but slightly lower SNR, and its mean correlation is comparable to **GREEN**. The **DeepPhysEnhancedReLu** variant sometimes improves correlation but at the cost of higher errors and lower SNR, indicating reduced stability.
+The **DeepPhysEnhanced** method (a DeepPhys network enriched with **POS** and **GREEN** channels) typically ranks among the front‑runners without dominating consistently: it frequently posts intermediate ranks (often 2nd or 3rd) in terms of error (MAE/RMSE) and SNR, while achieving the best correlations in two cases (Evaluations 7 and 10). This underscores its potential for fine temporal tracking of the pulse (fidelity of the waveform), even though its amplitude errors and noise remain slightly higher than the best classical methods overall.
 
-### Averages across 8 evaluations
+These observations are consistent with aggregated averages computed over all eight evaluations. On average, **GREEN** shows the lowest errors (mean MAE 19.56 and mean RMSE 25.31) and the best mean SNR (11.48 dB). **POS** follows closely with a mean MAE of 23.01, mean RMSE of 28.30, and mean SNR of 10.23 dB. **DeepPhysEnhanced** exhibits average errors comparable to **POS** (MAE 23.95; RMSE 29.65) but a slightly lower SNR (9.54 dB). In terms of mean correlation with the reference signal, **POS**, **GREEN**, and **DeepPhysEnhanced** obtain similar values (around 0.09–0.12), whereas **DeepPhys** is weaker (0.041). The **DeepPhysEnhancedReLu** variant stands out with the highest mean correlation (0.123), but this comes with higher error values (mean MAE 30.44) and a lower SNR (7.40 dB), suggesting a trade‑off in which improved temporal tracking is paid for with reduced accuracy and increased noise.
 
-| Method               | Mean MAE | Mean RMSE | Mean Pearson | Mean SNR (dB) |
-| -------------------- | -------- | --------- | ------------ | ------------- |
-| POS                  | 23.01    | 28.30     | 0.117        | 10.23         |
-| GREEN                | 19.56    | 25.31     | 0.095        | 11.48         |
-| DeepPhys             | 51.73    | 58.17     | 0.041        | 3.45          |
-| DeepPhysEnhanced     | 23.95    | 29.65     | 0.095        | 9.54          |
-| DeepPhysEnhancedReLu | 30.44    | 36.74     | 0.123        | 7.40          |
+## DeepPhysEnhanced: Method‑Specific Analysis
 
-### Win count per metric (8 evaluations)
+**DeepPhysEnhanced** deserves special attention, as it is designed as an extension of the original **DeepPhys** model that explicitly integrates channels derived from the classical approaches (**POS** and **GREEN**). This fusion allows **DeepPhysEnhanced** to benefit from more stable photoplethysmographic signals (thanks to the POS/GREEN channels) while retaining certain attributes of the learned model (ability to model complex relations, but also some variability under unfavorable conditions).
 
-| Method               | #MAE | #RMSE | #Pearson | #SNR |
-| -------------------- | ---- | ----- | -------- | ---- |
-| POS                  | 2    | 2     | 2        | 2    |
-| GREEN                | 4    | 4     | 1        | 4    |
-| DeepPhys             | 1    | 1     | 1        | 1    |
-| DeepPhysEnhanced     | 1    | 1     | 2        | 1    |
-| DeepPhysEnhancedReLu | 0    | 0     | 2        | 0    |
+In concrete terms, **DeepPhysEnhanced** often delivers intermediate‑to‑high performance: on many sequences, it ranks 2nd or 3rd for MAE, RMSE, and SNR. Its added value appears mainly in temporal tracking (correlation): it showed marked gains in Pearson correlation in evaluations such as **7** and **10**, where it outperformed all reference methods by closely following the cardiac signal’s temporal oscillation. When the additional POS/GREEN channels are informative and consistent with the true pulse dynamics (e.g., low subject motion, good illumination, limited artifacts), the learned model leverages them to outperform classical baselines, as seen with its clean sweep in Evaluation 7 and its top correlation in Evaluation 10.
 
-### Focus: DeepPhysEnhanced vs. other methods
+Conversely, when these additional channels are perturbed (significant subject movement, specular reflections or lighting changes, diverse skin tones introducing color‑channel noise), **DeepPhysEnhanced** may assign weight to misleading signals. In such cases, the model’s predictions become less reliable: we observe very low or even negative correlation with the reference signal (e.g., Evaluations 6 and 13), reflecting erratic temporal tracking, often accompanied by a simultaneous SNR degradation. This behavior highlights an important limitation: the performance of **DeepPhysEnhanced** varies more with scene content and input‑signal quality, which can introduce instability when conditions deviate from the optimal ones.
 
-**DeepPhysEnhanced** is built on **DeepPhys** and explicitly integrates channels derived from **POS** and **GREEN**. This fusion explains why it retains a noise/error structure close to DeepPhys while benefiting from the more stable PPG signals of POS/GREEN. In practice, this yields frequent 2nd–3rd places in MAE/RMSE and SNR, with marked gains in Pearson correlation in Evaluations 7 and 10. When the added channels are informative and consistent with the true dynamics, the model outperforms classical baselines (a clean sweep in Evaluation 7 and best correlation in Evaluation 10). Conversely, when those channels are perturbed (motion, specularities, skin tone variations, or non‑stationary lighting), the learned weighting can misfire: correlation drops to low or negative values (Evaluations 6 and 13), exposing a risk of unstable temporal tracking.
+In practice, the **DeepPhysEnhanced** variant (combining deep learning with expert POS/GREEN channels) is particularly suitable for sequences where the rPPG component is pronounced and minimally contaminated by motion noise. For more challenging ("adversarial") pulse‑measurement content—such as high activity or changing lighting—it is advisable to add safeguards when using **DeepPhysEnhanced**: for example, detect when correlation becomes negative or abnormally low, monitor SNR levels, and automatically fall back to a more reliable method like **GREEN** or **POS**. Such hybrid strategies would help secure signal exploitation by leveraging the best of both worlds—the temporal fidelity provided by deep learning when possible, and the stability of classical methods when in doubt.
 
-In practice, the POS/GREEN‑augmented variant is particularly suitable for sequences where the rPPG component is salient and minimally contaminated by motion artifacts. For more adversarial content, adding safety mechanisms (negative‑correlation detection, SNR gating, or automatic fallback to GREEN/POS) secures signal exploitation.
+## Conclusion of the Evaluations (General Overview)
 
-### Conclusion
+Based on all results across the eight evaluations, several major lessons emerge. **GREEN** establishes itself as the versatile reference, offering the best overall accuracy (minimal errors) and the best SNR in most cases, making it a strong default choice for estimating pulse from video. **POS** is a reliable second choice: its average performance is slightly below **GREEN**, yet it outperforms all deep‑learning methods in most situations and even surpasses **GREEN** on a few specific sequences (it dominated all metrics in Evaluation 11, for example).
 
-Across the eight evaluations, **GREEN** emerges as the versatile reference for accuracy and SNR, **POS** is a strong second choice, and **DeepPhys** is competitive only in an atypical case. **DeepPhysEnhanced**—defined as a DeepPhys extension incorporating POS/GREEN channels—shows clear potential: it can deliver the best temporal tracking and attractive error/noise trade‑offs, but its performance varies more with scene conditions. For general use, prefer **GREEN**; for scenarios where temporal fidelity is paramount and channel quality can be controlled, **DeepPhysEnhanced** becomes a strong candidate, ideally paired with safeguards (thresholds on correlation and SNR, plus fallback strategies).
+The deep model **DeepPhys** (without additional channels) appears less competitive on this test set, delivering strong results only in a very particular case (Evaluation 13). This suggests that without incorporating prior knowledge (dedicated color channels) or without test conditions aligned with its training, this model suffers from generalization or robustness issues under varying conditions.
+
+The **DeepPhysEnhanced** method, which enriches **DeepPhys** with **POS/GREEN** channels, demonstrates real potential for pulse measurement: in some cases, it can offer the best temporal tracking (maximizing correlation with the true pulse) while maintaining attractive trade‑offs between error and noise. However, its performance is not uniform and depends more on scene content (capture conditions, motion, etc.), which introduces variability. The **DeepPhysEnhancedReLu** variant illustrates this trade‑off: by modifying the output activation, it can sometimes further improve correlation (capturing instantaneous heart‑rate dynamics better), but at the cost of degraded stability (higher errors and lower SNR), indicating greater difficulty in maintaining absolute accuracy.
+
+## Usage Recommendation
+
+For general use and application contexts where overall reliability is paramount, it is recommended to favor **GREEN**, given its robustness and excellent average results. **POS** can also be used as an alternative or complement, being conceptually simple and inexpensive while offering performance close to **GREEN**. In contrast, deep‑learning‑based methods should be approached with greater caution. **DeepPhysEnhanced** can become a serious candidate in scenarios where the temporal fidelity of the signal is crucial (e.g., precise tracking of heart‑rate variability) and where the quality of the input channels can be controlled (limited motion, good illumination, etc.). Under these optimal conditions, it has shown that it can surpass classical methods on certain aspects of the signal. Nevertheless, it is strongly advised to integrate safeguards when using it in practice: for example, define confidence thresholds on correlation and SNR to decide whether the measurement is usable, and plan automatic fallback strategies to traditional methods (**GREEN**/**POS**) when the signal is questionable. Furthermore, future work could focus on improving the robustness of **DeepPhysEnhanced** (e.g., augmented training to better handle motion artifacts or adding adaptive filters) to reduce its variability and make it more reliable under diverse conditions. As the results currently stand, **GREEN** remains the reference method for stable, all‑around performance, **POS** provides a strong baseline in second place, and **DeepPhysEnhanced** represents a promising avenue for pushing beyond, provided its limits are managed through careful, guarded use.
 
 ## C- Activation Functions ReLU and Tanh using loss\_history
 
