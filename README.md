@@ -52,12 +52,13 @@ Key features:
   * `DeepPhysEnhanced`
 * Each CSV includes BPM estimations across different test conditions for comparison.
 
-### 5. `UBFC-RPPG/`
+### 5. UBFC‑RPPG (external download)
 
-A dataset folder organized as ground-truth sets:
+The **UBFC‑RPPG** dataset is **not included** in this repository. Please obtain it from the official page:
 
-* `gt/` subfolders, one per sequence.
-* Each `gt` directory includes an `.avi` video and its corresponding ground\_truth file.
+* [https://sites.google.com/view/ybenezeth/ubfcrppg](https://sites.google.com/view/ybenezeth/ubfcrppg)
+
+Follow the provider’s terms and instructions on that page.
 
 ### 6. `DeepphysEnhanced/`
 
