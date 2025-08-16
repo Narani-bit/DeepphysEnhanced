@@ -106,7 +106,8 @@ Aggregated evaluation metrics of the models for each video in the dataset.
 | **Complexity & Time**      | Moderate (CNN + attention network)                          | Reasonable complexity                                                   | Very lightweight                                              | Higher complexity (3 branches), still reasonable runtime                            |
 | **Ease of Implementation** | Medium (deep network with attention and 2 branches)         | Medium                                                                  | Very easy (single channel only)                               | More complex: requires synchronized inputs from 3 sources                           |
 
-# B-Comparative Performance Analysis of Five Methods
+
+# B- Comparative Performance Analysis of Five Methods
 
 Each evaluation compares five pulse‑measurement methods—**POS**, **GREEN**, **DeepPhys**, **DeepPhysEnhanced**, and **DeepPhysEnhancedReLu**—across four metrics: mean absolute error (MAE), root mean square error (RMSE), Pearson correlation with the reference signal, and signal‑to‑noise ratio (SNR, in dB). Below, we restate the key observations for each evaluation, highlighting the best performance per metric and the results achieved by **DeepPhysEnhanced** (the enhanced deep‑learning method) to indicate its rank.
 
