@@ -52,12 +52,13 @@ Key features:
   * `DeepPhysEnhanced`
 * Each CSV includes BPM estimations across different test conditions for comparison.
 
-### 5. `UBFC-RPPG/`
+### 5. UBFC‑RPPG (external download)
 
-A dataset folder organized as ground-truth sets:
+The **UBFC‑RPPG** dataset is **not included** in this repository. We are going to use DATASET_1. Please obtain it from the official page:
 
-* `gt/` subfolders, one per sequence.
-* Each `gt` directory includes an `.avi` video and its corresponding ground\_truth file.
+* [https://sites.google.com/view/ybenezeth/ubfcrppg](https://sites.google.com/view/ybenezeth/ubfcrppg)
+
+Follow the provider’s terms and instructions on that page.
 
 ### 6. `DeepphysEnhanced/`
 
@@ -67,7 +68,7 @@ Artifacts for the tanh-activation variant of DeepPhysEnhanced:
 * `bpm_results.csv`: BPM measurements for each video in the UBFC-RPPG dataset.
 * `metrics_summary.csv`: evaluation metrics collected during training, validation, and test.
 * `loss_history_tanh.csv`: training loss per epoch when using tanh activation.
-* `val_loss_history.csv`: validation loss per epoch.
+* `val_loss_history.csv`: validation loss per epoch when using tanh activation.
 * `DeepphysEnhanced.py`: model implementation using the tanh activation function.
 * `checkpoints/`: contains `deepphys_enhanced_last.pt` and `deepphys_enhanced_weights.pth`.
 
@@ -78,7 +79,7 @@ Artifacts for the ReLU-activation variant:
 * `DeepPhysEnhancedReLu_ipynb`: a Jupyter notebook with the full pipeline (split, train, validation, test, BPM results, BPM per second) using ReLU activation.
 * `bpm_results.csv`: BPM measurements for each video in the UBFC-RPPG dataset.
 * `metrics_summary.csv`: evaluation metrics captured during training, validation, and test.
-* `loss_history_ReLu.csv`: validation loss per epoch with ReLU activation.
+* `loss_history_ReLu.csv`: training loss per epoch with ReLU activation.
 * `val_loss_history_ReLu.csv`: validation loss per epoch.
 * `DeepphysEnhancedReLu.py`: model implementation using the ReLU activation function.
 * `checkpoints/`: contains `deepphys_enhanced_last.pt` and `deepphys_enhanced_weights.pth`.
