@@ -173,33 +173,26 @@ The **DeepPhysEnhanced** method, which enriches **DeepPhys** with **POS/GREEN** 
 
 For general use and application contexts where overall reliability is paramount, it is recommended to favor **GREEN**, given its robustness and excellent average results. **POS** can also be used as an alternative or complement, being conceptually simple and inexpensive while offering performance close to **GREEN**. In contrast, deep‑learning‑based methods should be approached with greater caution. **DeepPhysEnhanced** can become a serious candidate in scenarios where the temporal fidelity of the signal is crucial (e.g., precise tracking of heart‑rate variability) and where the quality of the input channels can be controlled (limited motion, good illumination, etc.). Under these optimal conditions, it has shown that it can surpass classical methods on certain aspects of the signal. Nevertheless, it is strongly advised to integrate safeguards when using it in practice: for example, define confidence thresholds on correlation and SNR to decide whether the measurement is usable, and plan automatic fallback strategies to traditional methods (**GREEN**/**POS**) when the signal is questionable. Furthermore, future work could focus on improving the robustness of **DeepPhysEnhanced** (e.g., augmented training to better handle motion artifacts or adding adaptive filters) to reduce its variability and make it more reliable under diverse conditions. As the results currently stand, **GREEN** remains the reference method for stable, all‑around performance, **POS** provides a strong baseline in second place, and **DeepPhysEnhanced** represents a promising avenue for pushing beyond, provided its limits are managed through careful, guarded use.
 
-## C- Activation Functions ReLU and Tanh using loss\_history
+# C- Comparative analysis of the ReLU and Tanh activation functions (based on loss\_history)
 
-### Comparative Table of Activation Functions ReLU and Tanh
+## Initial training dynamics
 
-| Aspect                                     | ReLU                                                                                | tanh                                                                            |
-| ------------------------------------------ | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| Start                                      | Starts lower (**0.004784**), initial advantage in absolute loss.                    | Starts higher (**0.026765**), initial handicap later compensated.               |
-| Initial speed (epochs 1–10)                | Fast decrease (slope ≈ **−3.63e−4**), 10% of initial loss reached at **epoch 5**.   | Very fast decrease (slope ≈ **−1.52e−3**), 10% reached as early as **epoch 2**. |
-| Mid-training                               | Plateaus around **\~1.1e−4** near **epochs \~6–7** and progresses little afterward. | Keeps **decreasing beyond 10** and **crosses 1e−4** at **epoch 16**.            |
-| Best point & end                           | Best loss **1.07e−4** at **epoch 27**; final loss **1.14e−4**.                      | Best loss **2.59e−5** at **epoch 24**; final loss **3.55e−5**.                  |
-| Curve crossover                            | Stays better **before epoch 15**, then is overtaken.                                | **Drops below ReLU at epoch 15** and **stays** below thereafter.                |
-| Cumulative loss (sum over 29 epochs)       | **Lower** (**0.01137**), favorable if training stops early.                         | **Higher** (**0.04050**) due to a high start, but wins at the end of training.  |
-| End-of-training stability (last 10 epochs) | Very stable (**σ ≈ 4.22e−6**), minimal variations around the plateau.               | Stable (**σ ≈ 2.90e−6**) despite a **much lower** loss level.                   |
+At the start, ReLU enjoys a clear advantage: the initial loss is low, which yields better absolute accuracy from the very first iterations. In contrast, Tanh begins with a much higher loss, representing an early handicap.
 
-### Interpretation
+## Intermediate phase
 
-ReLU offers an excellent start and a low cumulative loss if training stops early, but it plateaus fairly quickly (\~1.1e−4) and does not reach 1e−4 on these data (best at 1.07e−4, final 1.14e−4).
+Between epochs 6 and 15, the trajectories of the two functions diverge:
 
-Tanh starts much higher but accelerates more strongly, overtakes ReLU at epoch 15, drops below 1e−4 at epoch 16, and reaches better convergence (best 2.59e−5, final 3.55e−5).
+ReLU quickly enters a plateau and makes very little progress afterward. This stability can be seen as a sign of robustness, but it limits the ability to drive the loss lower.
 
-### Conclusion
+Tanh, for its part, continues to decrease after epoch 10 and crosses the critical threshold around epoch 16. At that point, it definitively overtakes ReLU in terms of performance.
 
-In our setting (29 epochs), **tanh** is the best for achieving the lowest final loss and deeper convergence. No marked instability was observed: ReLU remains very smooth but plateaued, while tanh shows slight ripples at the end of training, consistent with a very low loss and without problematic oscillations.
+Final performance: ReLU leads up to epoch 15, but Tanh takes over afterward and keeps the advantage through the end of training.
 
-### Improvement Suggestions
+Regarding stability, ReLU is extremely steady in the final phase, whereas Tanh exhibits slight oscillations. These modest variations for Tanh are explained by its much lower loss level and do not indicate any problematic instability.
 
-* **For tanh:** add a learning-rate scheduler; an early stop based on train-loss stagnation is an alternative.
+ReLU is optimal for short training runs or when a compromise between speed and robustness is sought.
+
 
 ## 📜 Citation
 
