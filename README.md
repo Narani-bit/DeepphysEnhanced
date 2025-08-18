@@ -175,15 +175,12 @@ For general use and application contexts where overall reliability is paramount,
 
 # C- Comparative analysis of the ReLU and Tanh activation functions (based on loss\_history)
 
-At the start, ReLU starts markedly lower (≈ 0.004784) than Tanh (≈ 0.026765), indicating good initial compatibility between input scale, initialization, and a non‑saturating positive branch; Tanh likely pays an initial saturation cost. In relative speed, however, Tanh decreases much faster early on (slope ≈ −1.52e−3 vs. ≈ −3.63e−4 for ReLU) and reaches 10% of its initial loss by epoch 2, whereas ReLU only does so by epoch 5.
+ReLU starts markedly lower (≈ 0.004784) than tanh (≈ 0.026765), signaling good initial compatibility between input scale, initialization, and a non‑saturating positive branch; tanh likely pays an initial saturation cost. In relative speed, however, tanh drops much faster early in training (slope ≈ −1.52e−3 vs. ≈ −3.63e−4 for ReLU) and reaches 10% of its initial loss by epoch 2, whereas ReLU does so only by epoch 5. In absolute terms, ReLU remains better until around epoch 15, but its curve settles very early into a plateau around \~1.1e−4 (epochs 6–7), which often reflects dead ReLUs and/or a relatively uninformative loss landscape under a constant learning rate.
 
-Between epochs 6 and 15, the trajectories of the two functions diverge:
-ReLU quickly enters a plateau around \~1.1e−4 (near epochs 6–7) and makes very little progress afterward. This stability can be seen as a sign of robustness, but it limits further reduction—often consistent with dead ReLUs and/or a relatively uninformative loss landscape under a constant learning rate.
-Tanh, for its part, continues to decrease after epoch 10 and crosses the critical 1e−4 threshold around epoch 16. At that point, it definitively overtakes ReLU (crossover near epoch 15) and maintains the lead thereafter.
-Final performance: ReLU leads up to epoch 15, but Tanh takes over afterward and keeps the advantage through the end of training. By the end, the gap is clear: Tanh’s best point is 2.59e−5 (epoch 24) with a final loss of 3.55e−5, whereas ReLU tops out at 1.07e−4 (epoch 27) and finishes at 1.14e−4—about 3× worse.
-Regarding stability, ReLU is extremely steady in the final phase, whereas Tanh exhibits slight oscillations. These modest variations for Tanh are explained by its much lower loss level (σ ≈ 2.90e−6 for Tanh vs. 4.22e−6 for ReLU) and do not indicate any problematic instability.
+Conversely, tanh continues to decrease beyond epoch 10, crosses 1e−4 at epoch 16, and drops below ReLU at epoch 15, never giving back the lead. By the end of training, the gap is clear: tanh’s best point is 2.59e−5 (ep. 24) with a final loss of 3.55e−5, whereas ReLU tops out at 1.07e−4 (ep. 27) and finishes at 1.14e−4—about 3× worse. Both trajectories are stable over the last 10 epochs (σ ≈ 2.90e−6 for tanh, 4.22e−6 for ReLU), indicating clean convergence; tanh even oscillates slightly less despite a lower loss level. The only caveat: considering cumulative loss over 29 epochs (the cost *during* training), ReLU is more economical (0.01137 vs. 0.04050), a direct consequence of tanh’s higher starting point.
 
-ReLU is optimal for short training runs or when a compromise between speed and robustness is sought.
+These profiles match theory: ReLU, non‑saturating on the positive side, delivers an excellent start but is prone to early plateaus; tanh, zero‑centered and smooth, reduces bias shift and maintains useful gradients once the scale is learned, hence its superior final convergence. In practice, choose ReLU if you favor early performance or aggressive early stopping, and tanh if the goal is the lowest end‑of‑training error.
+
 
 ## 📜 Citation
 
